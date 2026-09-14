@@ -1,5 +1,7 @@
 # Systematic Trading Research
 
+[![CI](https://github.com/Olliemac0707/systematic-trading-research/actions/workflows/ci.yml/badge.svg)](https://github.com/Olliemac0707/systematic-trading-research/actions/workflows/ci.yml)
+
 A Python 3.12 framework for reproducible systematic-strategy research, event-driven
 backtesting, benchmark comparison, risk analysis and sealed out-of-sample evaluation.
 
