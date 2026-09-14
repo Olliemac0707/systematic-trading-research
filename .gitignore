@@ -1,0 +1,45 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest-temp/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*.tmp
+*.swp
+*~
+
+# Virtual environments and packaging
+.venv/
+venv/
+.test-site/
+build/
+dist/
+*.egg-info/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Market-data caches and local output (root-only so package modules remain tracked)
+/.cache/
+/datasets/
+/data/incoming/
+/data/prepared/
+/data/reference/
+/reports/
+/test
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

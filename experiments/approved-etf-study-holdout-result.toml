@@ -1,0 +1,157 @@
+schema = "trading-research.sealed-holdout-result"
+schema_version = "1.0"
+study = "approved-etf-study"
+phase = "holdout"
+holdout_start = "2019-01-02"
+holdout_end = "2025-12-31"
+holdout_status = "completed"
+holdout_attempt = 1
+holdout_reusable_for_selection = false
+
+selected_strategy = "sma_crossover"
+fast_period = 50
+slow_period = 200
+authorised_evaluation_count = 8
+completed_evaluation_count = 8
+
+integrity_status = "passed"
+generalisation_status = "not_supported"
+classification = "GENERALISATION NOT SUPPORTED BY PRE-REGISTERED GATE"
+classification_reason = "The selected universal SMA 50/200 strategy achieved smaller maximum-drawdown magnitude than buy-and-hold in only 3 of 8 holdout assets, below the pre-registered threshold of 5."
+
+positive_return_assets = 6
+positive_return_required = 6
+positive_sharpe_assets = 7
+positive_sharpe_required = 6
+smaller_drawdown_assets = 3
+smaller_drawdown_required = 5
+
+source_commit = "f8aa2a03b1dc5f4e8c5a09ab28530cee545e3c3b"
+source_tag = "v0.4.0"
+source_application_version = "0.4.0"
+application_version = "0.5.0"
+selection_record_sha256 = "d663a2ce3e0787fc10d2441fae9de44c3a93c6f20898d851df78178a519a0cff"
+study_manifest_sha256 = "73769c33454cc59b59c22a0091940eaa84e83167d7a1a910ceeabeeb9c1bc236"
+development_summary_sha256 = "a60d20551c9aa5f079427ef0c34135df79cae52116b7ae2624307863b66fe9df"
+holdout_configuration_sha256 = "2264fbf414804be31651f207e98c0a618346a783132c0352eec65337e3b499d7"
+
+original_output = "reports/approved-etf-study/holdout-v0.4.0"
+reproduction_output = "reports/approved-etf-study/holdout-v0.5.0-reproduction"
+financial_reproduction = "exact"
+reproduction_is_new_holdout_attempt = false
+
+all_evaluations_used_sma_50_200 = true
+all_evaluations_reconciled_exactly = true
+no_other_candidate_or_parameter_evaluated = true
+no_post_holdout_tuning = true
+dividends_excluded = true
+volume_used = false
+live_network_request_used = false
+assets_below_three_closed_trades = 0
+
+[aggregate]
+median_net_return = "0.3532210275632143936503389765"
+mean_net_return = "0.6282439149451343811626726529"
+median_periodic_sharpe = "0.02011915134448973006984398396"
+mean_periodic_sharpe = "0.02570028434371837393817191627"
+median_strategy_maximum_drawdown = "-0.3288918677303627869124251404"
+median_benchmark_return = "1.06514616370168228582077744"
+median_benchmark_maximum_drawdown = "-0.3832837171033989427672203754"
+closed_trades = 48
+total_commission = "1168.84312903557806895587780"
+total_slippage = "5844.3430472574234449060"
+total_simulated_costs = "7013.18617629300151386187780"
+mean_exposure = "0.6573863636363636363636363636"
+
+[dataset_sha256]
+SPY = "d1edbc93f2e89cff7827b96c2b7a820281a07cabac1dffa6443037011ae6a2ec"
+QQQ = "c3a23aa983a3a0cd5080edf11bcf7e1ea1c1a927b72fdddcae5e6fe446371034"
+IWM = "eef32e78bceaa966a5ed767d359d0db64223fe12a42b251b16e1a1eab985e804"
+XLF = "61d7384e4374830786a716e414201e801c49605d8a02575dad34d896df258e1f"
+XLE = "7e98ad15262bfc88c657f6a803d757b487a14aa2c9dd2e6763910bb5877b6b94"
+XLV = "8d5917f63c07e23b628db87a691e894256a8ea735265d98c38ac5b7a17ced99d"
+TLT = "66aa6d3ef6cff63fd6a8db3a05879e863d91797bb041fc6124f41db705d3cfd4"
+GLD = "e3ddffa9c366ac8385883dca6c38d9805e1ab4b2360476a724b88020a70a5656"
+
+[report_sha256]
+holdout_summary_csv = "54b5dbb266b706a87821a7d7a75ea2c9257e9cf1ff82b3c8fd722544d6b18d8a"
+holdout_summary_json = "fced3330a8f6acbcc2240f755882be42bd7e41955ec4bbc040656bea34f8fa21"
+holdout_report_txt = "0ea1422f0349389a8ef3b03e30a540462ed29356d1c89342de41088dcc21fb62"
+benchmark_comparison_csv = "b446a80775d59dc38f01564306c766044c357930972702e5c3ba2aaf55b2698d"
+development_holdout_comparison_csv = "d7288b4e63d89da7239b0a98efa7dd668831c3f994952fd64263020455b8cffb"
+generalisation_assessment_json = "52c3aaaa8c0c7ac05f8ad4b7dbbc71d1de4bf9bf09dc51b8cd798e30605f608c"
+run_metadata_json = "9a55ef10335428b109d158d6690109466ad161eb20889c0eb1d79ca2d2ecd771"
+
+[findings]
+principal = [
+    "QQQ produced the highest ending equity and strategy return.",
+    "GLD was the only asset whose return improved versus development.",
+    "TLT was the only asset whose strategy return exceeded its buy-and-hold return.",
+    "IWM and XLV produced negative net returns.",
+    "IWM produced the only negative Sharpe ratio.",
+    "XLE had the deepest strategy drawdown but materially improved on its benchmark drawdown.",
+    "Return deterioration occurred in six assets under the pre-registered material-deterioration rule.",
+    "The strategy underperformed buy-and-hold return in seven of eight assets.",
+    "Drawdown advantage persisted only in QQQ, XLE and TLT.",
+]
+
+research_interpretation = [
+    "This was the first and only sealed holdout evaluation.",
+    "SMA 50/200 was selected before holdout results were inspected.",
+    "Exactly eight predetermined evaluations were executed.",
+    "No alternative strategy or parameter was evaluated.",
+    "The integrity gate passed.",
+    "The generalisation gate failed.",
+    "The current hypothesis is not supported under its pre-registered criteria.",
+    "The holdout must not be reused to select a modified strategy.",
+    "Any future modified hypothesis requires a new research protocol and genuinely fresh validation data.",
+    "The results are simulated, dividend-excluded price returns and are not evidence of future profitability.",
+]
+
+[[asset_outcomes]]
+symbol = "SPY"
+positive_return = true
+positive_sharpe = true
+drawdown_advantage = false
+
+[[asset_outcomes]]
+symbol = "QQQ"
+positive_return = true
+positive_sharpe = true
+drawdown_advantage = true
+
+[[asset_outcomes]]
+symbol = "IWM"
+positive_return = false
+positive_sharpe = false
+drawdown_advantage = false
+
+[[asset_outcomes]]
+symbol = "XLF"
+positive_return = true
+positive_sharpe = true
+drawdown_advantage = false
+
+[[asset_outcomes]]
+symbol = "XLE"
+positive_return = true
+positive_sharpe = true
+drawdown_advantage = true
+
+[[asset_outcomes]]
+symbol = "XLV"
+positive_return = false
+positive_sharpe = true
+drawdown_advantage = false
+
+[[asset_outcomes]]
+symbol = "TLT"
+positive_return = true
+positive_sharpe = true
+drawdown_advantage = true
+
+[[asset_outcomes]]
+symbol = "GLD"
+positive_return = true
+positive_sharpe = true
+drawdown_advantage = false

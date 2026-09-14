@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Systematic Trading Research"
+type: software
+authors:
+  - family-names: "MacLoughlin"
+    given-names: "Oliver"
+version: "0.5.0"
+date-released: "2026-07-27"
+license: MIT

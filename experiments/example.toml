@@ -1,0 +1,52 @@
+schema_version = "1.0"
+
+[[experiments]]
+id = "sma-baseline"
+dataset = "../data/sample_prices.csv"
+symbol = "DEMO"
+starting_cash = "10000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "hold"
+benchmark = "buy-and-hold"
+
+[experiments.strategy]
+name = "sma-crossover"
+
+[experiments.strategy.parameters]
+fast_window = 2
+slow_window = 3
+
+[experiments.position_sizing]
+mode = "fixed"
+quantity = 10
+
+[experiments.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[experiments]]
+id = "donchian-baseline"
+dataset = "../tests/fixtures/donchian_prices.csv"
+symbol = "CHAN"
+starting_cash = "10000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "none"
+
+[experiments.strategy]
+name = "donchian-breakout"
+
+[experiments.strategy.parameters]
+entry_window = 2
+exit_window = 2
+
+[experiments.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "0.25"
+
+[experiments.risk_policy]
+maximum_position_value = "2500"
+minimum_cash_reserve = "1000"

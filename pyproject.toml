@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "trading-research"
+version = "0.5.0"
+description = "A reproducible systematic trading research and backtesting framework."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+authors = [{ name = "Trading Research Contributors" }]
+dependencies = [
+    "pydantic>=2.10,<3",
+    "pydantic-settings>=2.7,<3",
+    "tzdata>=2025.2; sys_platform == 'win32'",
+    "yfinance==1.5.1",
+]
+
+[project.scripts]
+trading-research = "trading_research.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "mypy>=1.14,<2",
+    "pytest>=8.3,<9",
+    "pytest-cov>=6,<7",
+    "ruff>=0.9,<1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/trading_research"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers --basetemp=.pytest-temp -p no:cacheprovider"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src", "tests"]

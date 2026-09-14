@@ -1,0 +1,120 @@
+schema = "trading-research.development-selection-record"
+schema_version = "1.0"
+study = "approved-etf-study"
+phase = "development"
+development_start = "2005-01-03"
+development_end = "2018-12-31"
+holdout_start = "2019-01-02"
+holdout_end = "2025-12-31"
+holdout_status = "sealed"
+
+source_dataset_commit = "718816c1e3471dba95086ea64c73e24a907d2b71"
+source_dataset_tag = "v0.3.0"
+manifest_sha256 = "73769c33454cc59b59c22a0091940eaa84e83167d7a1a910ceeabeeb9c1bc236"
+
+selected_candidate_id = "sma-50-200"
+selected_strategy = "sma-crossover"
+fast_period = 50
+slow_period = 200
+overall_rank_score = "1.583333333333333333333333333"
+positive_return_assets = 8
+positive_sharpe_assets = 8
+smaller_drawdown_than_benchmark_assets = 8
+minimum_closed_trades = 5
+eligibility_status = "qualified"
+selection_status = "selected_for_single_holdout_evaluation"
+selection_scope = "one universal candidate for all eight assets"
+candidate_specific_asset_selection = false
+tie_breaker_used = false
+development_output = "reports/approved-etf-study/development-v0.4.0"
+reproduction_command = "python -m trading_research evaluate --manifest experiments/approved-etf-study.toml --output-dir reports/approved-etf-study/development-v0.4.0 --development-only"
+
+[eligibility_rule]
+required_successes = 8
+required_reconciliations = 8
+minimum_positive_return_assets = 6
+minimum_positive_sharpe_assets = 6
+minimum_smaller_drawdown_than_benchmark_assets = 5
+minimum_closed_trades_per_asset = 3
+maximum_unresolved_integrity_warnings = 0
+
+[ranking_rule]
+asset_measures = [
+    "net return descending",
+    "periodic Sharpe ratio descending",
+    "maximum drawdown magnitude ascending",
+]
+tie_rank_policy = "exact average rank"
+overall_score = "arithmetic mean of 24 asset-level ranks: three measures for each of eight assets"
+tie_breakers = [
+    "higher median periodic Sharpe ratio",
+    "smaller median maximum-drawdown magnitude",
+    "higher median net return",
+    "lower total commission plus slippage",
+    "fewer total closed trades",
+]
+
+[artifact_sha256]
+development_summary_csv = "a60d20551c9aa5f079427ef0c34135df79cae52116b7ae2624307863b66fe9df"
+development_summary_json = "facadace275c4417eec9def40767478dcaf5f3e58f0d8143ed896163e1e11469"
+candidate_summary_csv = "cd126ef4e7451765e9521be21db72f5f51cff197f0d2684ea2b3852e896daae3"
+benchmark_comparison_csv = "b963ddf864a1d8def37cb5776caee9677af14707c6ae89d23016827205621b0e"
+selection_policy_json = "f5019365887b0d1e728d0a42c7d9677d6bf2d0c16a4c0a9f136d7d421be1dca7"
+run_integrity_json = "9091625a932227b28748ba6605652a7f9c40cc497f2a616253890b7b821d5253"
+
+[[candidates]]
+candidate_id = "sma-20-50"
+strategy = "sma-crossover"
+parameters = { fast_window = 20, slow_window = 50 }
+overall_rank_score = "2.75"
+eligible = true
+positive_return_assets = 7
+positive_sharpe_assets = 8
+smaller_drawdown_than_benchmark_assets = 8
+minimum_closed_trades = 34
+disqualification_reasons = []
+
+[[candidates]]
+candidate_id = "sma-50-200"
+strategy = "sma-crossover"
+parameters = { fast_window = 50, slow_window = 200 }
+overall_rank_score = "1.583333333333333333333333333"
+eligible = true
+positive_return_assets = 8
+positive_sharpe_assets = 8
+smaller_drawdown_than_benchmark_assets = 8
+minimum_closed_trades = 5
+disqualification_reasons = []
+
+[[candidates]]
+candidate_id = "donchian-20-10"
+strategy = "donchian-breakout"
+parameters = { entry_window = 20, exit_window = 10 }
+overall_rank_score = "2.875"
+eligible = true
+positive_return_assets = 8
+positive_sharpe_assets = 8
+smaller_drawdown_than_benchmark_assets = 8
+minimum_closed_trades = 76
+disqualification_reasons = []
+
+[[candidates]]
+candidate_id = "donchian-50-20"
+strategy = "donchian-breakout"
+parameters = { entry_window = 50, exit_window = 20 }
+overall_rank_score = "2.791666666666666666666666667"
+eligible = true
+positive_return_assets = 6
+positive_sharpe_assets = 7
+smaller_drawdown_than_benchmark_assets = 8
+minimum_closed_trades = 34
+disqualification_reasons = []
+
+[known_limitations]
+selected_candidate = [
+    "SMA 50/200 beat buy-and-hold return in only SPY and XLF during development.",
+    "SMA 50/200 had its weakest return and Sharpe result in TLT.",
+    "SMA 50/200 had its largest selected-strategy drawdown in IWM.",
+    "SMA 50/200 had its largest benchmark-return shortfall in GLD.",
+    "SMA 50/200 was selected primarily for cross-asset robustness, risk control and lower turnover rather than maximum absolute return.",
+]

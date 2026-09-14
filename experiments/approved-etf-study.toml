@@ -1,0 +1,993 @@
+schema_version = "1.0"
+
+[[split_evaluations]]
+id = "spy-sma-20-50"
+dataset = "../data/prepared/approved-etf-study/yahoo/SPY/spy_daily_split_adjusted.csv"
+symbol = "SPY"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 20
+slow_window = 50
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "spy-sma-50-200"
+dataset = "../data/prepared/approved-etf-study/yahoo/SPY/spy_daily_split_adjusted.csv"
+symbol = "SPY"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 50
+slow_window = 200
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "spy-donchian-20-10"
+dataset = "../data/prepared/approved-etf-study/yahoo/SPY/spy_daily_split_adjusted.csv"
+symbol = "SPY"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 20
+exit_window = 10
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "spy-donchian-50-20"
+dataset = "../data/prepared/approved-etf-study/yahoo/SPY/spy_daily_split_adjusted.csv"
+symbol = "SPY"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 50
+exit_window = 20
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "qqq-sma-20-50"
+dataset = "../data/prepared/approved-etf-study/yahoo/QQQ/qqq_daily_split_adjusted.csv"
+symbol = "QQQ"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 20
+slow_window = 50
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "qqq-sma-50-200"
+dataset = "../data/prepared/approved-etf-study/yahoo/QQQ/qqq_daily_split_adjusted.csv"
+symbol = "QQQ"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 50
+slow_window = 200
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "qqq-donchian-20-10"
+dataset = "../data/prepared/approved-etf-study/yahoo/QQQ/qqq_daily_split_adjusted.csv"
+symbol = "QQQ"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 20
+exit_window = 10
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "qqq-donchian-50-20"
+dataset = "../data/prepared/approved-etf-study/yahoo/QQQ/qqq_daily_split_adjusted.csv"
+symbol = "QQQ"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 50
+exit_window = 20
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "iwm-sma-20-50"
+dataset = "../data/prepared/approved-etf-study/yahoo/IWM/iwm_daily_split_adjusted.csv"
+symbol = "IWM"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 20
+slow_window = 50
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "iwm-sma-50-200"
+dataset = "../data/prepared/approved-etf-study/yahoo/IWM/iwm_daily_split_adjusted.csv"
+symbol = "IWM"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 50
+slow_window = 200
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "iwm-donchian-20-10"
+dataset = "../data/prepared/approved-etf-study/yahoo/IWM/iwm_daily_split_adjusted.csv"
+symbol = "IWM"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 20
+exit_window = 10
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "iwm-donchian-50-20"
+dataset = "../data/prepared/approved-etf-study/yahoo/IWM/iwm_daily_split_adjusted.csv"
+symbol = "IWM"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 50
+exit_window = 20
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "xlf-sma-20-50"
+dataset = "../data/prepared/approved-etf-study/yahoo/XLF/xlf_daily_split_adjusted.csv"
+symbol = "XLF"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 20
+slow_window = 50
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "xlf-sma-50-200"
+dataset = "../data/prepared/approved-etf-study/yahoo/XLF/xlf_daily_split_adjusted.csv"
+symbol = "XLF"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 50
+slow_window = 200
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "xlf-donchian-20-10"
+dataset = "../data/prepared/approved-etf-study/yahoo/XLF/xlf_daily_split_adjusted.csv"
+symbol = "XLF"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 20
+exit_window = 10
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "xlf-donchian-50-20"
+dataset = "../data/prepared/approved-etf-study/yahoo/XLF/xlf_daily_split_adjusted.csv"
+symbol = "XLF"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 50
+exit_window = 20
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "xle-sma-20-50"
+dataset = "../data/prepared/approved-etf-study/yahoo/XLE/xle_daily_split_adjusted.csv"
+symbol = "XLE"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 20
+slow_window = 50
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "xle-sma-50-200"
+dataset = "../data/prepared/approved-etf-study/yahoo/XLE/xle_daily_split_adjusted.csv"
+symbol = "XLE"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 50
+slow_window = 200
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "xle-donchian-20-10"
+dataset = "../data/prepared/approved-etf-study/yahoo/XLE/xle_daily_split_adjusted.csv"
+symbol = "XLE"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 20
+exit_window = 10
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "xle-donchian-50-20"
+dataset = "../data/prepared/approved-etf-study/yahoo/XLE/xle_daily_split_adjusted.csv"
+symbol = "XLE"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 50
+exit_window = 20
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "xlv-sma-20-50"
+dataset = "../data/prepared/approved-etf-study/yahoo/XLV/xlv_daily_split_adjusted.csv"
+symbol = "XLV"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 20
+slow_window = 50
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "xlv-sma-50-200"
+dataset = "../data/prepared/approved-etf-study/yahoo/XLV/xlv_daily_split_adjusted.csv"
+symbol = "XLV"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 50
+slow_window = 200
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "xlv-donchian-20-10"
+dataset = "../data/prepared/approved-etf-study/yahoo/XLV/xlv_daily_split_adjusted.csv"
+symbol = "XLV"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 20
+exit_window = 10
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "xlv-donchian-50-20"
+dataset = "../data/prepared/approved-etf-study/yahoo/XLV/xlv_daily_split_adjusted.csv"
+symbol = "XLV"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 50
+exit_window = 20
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "tlt-sma-20-50"
+dataset = "../data/prepared/approved-etf-study/yahoo/TLT/tlt_daily_split_adjusted.csv"
+symbol = "TLT"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 20
+slow_window = 50
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "tlt-sma-50-200"
+dataset = "../data/prepared/approved-etf-study/yahoo/TLT/tlt_daily_split_adjusted.csv"
+symbol = "TLT"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 50
+slow_window = 200
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "tlt-donchian-20-10"
+dataset = "../data/prepared/approved-etf-study/yahoo/TLT/tlt_daily_split_adjusted.csv"
+symbol = "TLT"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 20
+exit_window = 10
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "tlt-donchian-50-20"
+dataset = "../data/prepared/approved-etf-study/yahoo/TLT/tlt_daily_split_adjusted.csv"
+symbol = "TLT"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 50
+exit_window = 20
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "gld-sma-20-50"
+dataset = "../data/prepared/approved-etf-study/yahoo/GLD/gld_daily_split_adjusted.csv"
+symbol = "GLD"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 20
+slow_window = 50
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "gld-sma-50-200"
+dataset = "../data/prepared/approved-etf-study/yahoo/GLD/gld_daily_split_adjusted.csv"
+symbol = "GLD"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 50
+slow_window = 200
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "gld-donchian-20-10"
+dataset = "../data/prepared/approved-etf-study/yahoo/GLD/gld_daily_split_adjusted.csv"
+symbol = "GLD"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 20
+exit_window = 10
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "gld-donchian-50-20"
+dataset = "../data/prepared/approved-etf-study/yahoo/GLD/gld_daily_split_adjusted.csv"
+symbol = "GLD"
+starting_cash = "100000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2005-01-03T00:00:00+00:00"
+development_end = "2018-12-31T23:59:59+00:00"
+holdout_start = "2019-01-02T00:00:00+00:00"
+holdout_end = "2025-12-31T23:59:59+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 50
+exit_window = 20
+
+[split_evaluations.position_sizing]
+mode = "cash-allocation"
+cash_allocation_ratio = "1.0"
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"

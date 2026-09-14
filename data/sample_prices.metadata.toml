@@ -1,0 +1,10 @@
+[provenance]
+dataset_id = "sample-prices-v1"
+source_name = "project educational fixture"
+price_adjustment = "unknown"
+dividend_treatment = "unknown"
+split_treatment = "unknown"
+bar_frequency = "daily"
+exchange_timezone = "UTC"
+currency = "USD"
+notes = "Adjustment state is deliberately unknown; no corporate-action correction is inferred."

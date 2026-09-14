@@ -1,0 +1,84 @@
+schema_version = "1.0"
+
+[[split_evaluations]]
+id = "sma-isolated"
+dataset = "../data/sample_prices.csv"
+symbol = "DEMO"
+starting_cash = "10000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "hold"
+benchmark = "none"
+
+[split_evaluations.split]
+development_start = "2025-01-01T00:00:00+00:00"
+development_end = "2025-01-04T00:00:00+00:00"
+holdout_start = "2025-01-05T00:00:00+00:00"
+holdout_end = "2025-01-08T00:00:00+00:00"
+warmup_policy = "isolated"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 1
+slow_window = 2
+
+[split_evaluations.position_sizing]
+mode = "fixed"
+quantity = 10
+
+[[split_evaluations]]
+id = "sma-carry-history"
+dataset = "../data/sample_prices.csv"
+symbol = "DEMO"
+starting_cash = "10000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "hold"
+benchmark = "buy-and-hold"
+
+[split_evaluations.split]
+development_start = "2025-01-01T00:00:00+00:00"
+development_end = "2025-01-04T00:00:00+00:00"
+holdout_start = "2025-01-05T00:00:00+00:00"
+holdout_end = "2025-01-08T00:00:00+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "sma-crossover"
+fast_window = 1
+slow_window = 2
+
+[split_evaluations.position_sizing]
+mode = "fixed"
+quantity = 10
+
+[split_evaluations.risk_metrics]
+periods_per_year = "252"
+risk_free_rate_per_period = "0"
+target_return_per_period = "0"
+
+[[split_evaluations]]
+id = "donchian-carry-history"
+dataset = "../data/sample_prices.csv"
+symbol = "DEMO"
+starting_cash = "10000"
+commission_bps = "1"
+slippage_bps = "5"
+end_of_test = "liquidate"
+benchmark = "none"
+
+[split_evaluations.split]
+development_start = "2025-01-01T00:00:00+00:00"
+development_end = "2025-01-04T00:00:00+00:00"
+holdout_start = "2025-01-05T00:00:00+00:00"
+holdout_end = "2025-01-08T00:00:00+00:00"
+warmup_policy = "carry-history"
+
+[split_evaluations.strategy]
+name = "donchian-breakout"
+entry_window = 2
+exit_window = 2
+
+[split_evaluations.position_sizing]
+mode = "fixed"
+quantity = 10
