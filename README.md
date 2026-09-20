@@ -55,6 +55,12 @@ The package uses typed interfaces and immutable domain models so financial logic
 can be tested independently. Normal strategy signals are calculated from completed
 bars and execute at the following bar's open.
 
+## Current research direction
+
+The research programme has progressed from strategy evaluation toward frozen-candidate implementation research: robustness diagnostics, outcome-blind execution checks, currency-denominated economic-exposure modelling, and a separate UK implementation/proxy-divergence layer. Exact current strategy parameters and performance outputs are intentionally withheld from the public repository.
+
+See [Research programme evolution](docs/research-programme-evolution.md) for the current methodology and project direction.
+
 ## Run the offline example
 
 ```bash
